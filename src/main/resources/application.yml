@@ -35,12 +35,12 @@ spring:
           filters:
             - RemoveRequestHeader=Cookie
             - RewritePath=/first-service/(?<segment>.*), /$\{segment}
-       - id: user-service
-         uri: lb://USER-SERVICE
-         predicates:
+        - id: user-service
+          uri: lb://USER-SERVICE
+          predicates:
            - Path=/user-service/**
            - Method=GET
-         filters:
+          filters:
            - RemoveRequestHeader=Cookie
            - RewritePath=/user-service/(?<segment>.*), /$\{segment}
 
