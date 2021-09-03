@@ -1,6 +1,14 @@
 server:
-  port: 8000
-  address: localhost
+  port: 443
+  address: totoma.ec-bank.net
+  ssl:
+    enabled: true
+    key-store: /java/repo_local/Wildcard.ecbank.net_tomcat.jks
+    key-store-password: ecba2017
+    key-store-type: JKS
+    enabled-protocols: TLSv1.3,TLSv1.2
+  http2:
+    enabled: true
 
 eureka:
   client:
